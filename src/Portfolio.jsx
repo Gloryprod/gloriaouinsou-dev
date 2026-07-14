@@ -826,7 +826,7 @@ export default function Portfolio() {
       <footer className="border-t border-[var(--border)]">
         <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-mono text-[12px] text-[var(--text-muted)]">
-            © {new Date().getFullYear()} {PROFILE.name} — Touts droits réservés.
+            © {new Date().getFullYear()} {PROFILE.name} — Tous droits réservés.
           </p>
           <div className="flex items-center gap-4">
             <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
