@@ -97,6 +97,15 @@ const PROFILE = {
   cvUrl: "#", // TODO: lien vers ton CV (PDF hébergé)
 };
 
+// Photo utilisée dans la section "À propos".
+// Place ton fichier photo dans le dossier `public/` de ton projet Vite
+// (ex: public/photo-gloria.jpg), puis référence-le ici avec un chemin
+// commençant par "/" — Vite sert automatiquement tout ce qui est dans
+// `public/` à la racine du site, pas besoin d'import.
+// Format recommandé : portrait, ratio 4/5 (ex: 800x1000px), .jpg ou .webp,
+// compressé (< 300 Ko) pour ne pas ralentir le chargement.
+const ABOUT_PHOTO_URL = "/photo-gloria.jpg";
+
 const NAV_LINKS = [
   { id: "about", label: "À propos" },
   { id: "projects", label: "Projets" },
@@ -517,8 +526,8 @@ export default function Portfolio() {
             <MapPin size={14} /> {PROFILE.location} — disponible pour de nouvelles missions
           </p>
           <h1 className="font-display font-semibold text-[36px] sm:text-[52px] leading-[1.08] tracking-tight text-[var(--text)] mb-6">
-           Développeuse{" "}
-            <span className="text-[var(--accent)]">web Full Stack</span>.
+            Développeuse{" "}
+            <span className="text-[var(--accent)]">Web Full Stack</span>.
           </h1>
           <p className="text-[17px] sm:text-[18px] leading-relaxed text-[var(--text-muted)] max-w-xl mb-9">
             {PROFILE.tagline} Spécialisée en React, Next.js, Node.js et Laravel, je livre des
@@ -585,13 +594,33 @@ export default function Portfolio() {
       {/* ---------------------------------------------------------------- */}
       <section id="about" className="max-w-6xl mx-auto px-6 py-8 sm:py-16 grid md:grid-cols-[0.4fr_0.6fr] gap-10 min-w-0">
         <Reveal>
+          {/* Photo de profil — cadre décoratif accent en arrière-plan, cohérent
+              avec le style "carte" utilisé ailleurs sur le site (bordure fine,
+              coins arrondis). Remplace ABOUT_PHOTO_URL par le chemin réel de
+              ta photo (voir commentaire plus bas). */}
           <p className="font-mono text-[13px] text-[var(--accent)] mb-3">À propos</p>
           <h2 className="font-display font-semibold text-2xl sm:text-3xl text-[var(--text)] leading-tight">
             La rigueur comme méthode, l'impact comme boussole.
           </h2>
+          <div className="relative w-full max-w-[280px] mt-8">
+            <div
+              className="absolute -inset-3 rounded-2xl border border-[var(--accent)]/30 -z-10"
+              aria-hidden="true"
+            />
+            <div className="rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--surface-2)] aspect-[4/5]">
+              <img
+                src={ABOUT_PHOTO_URL}
+                alt="Portrait de Gloria Ouinsou"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width="280"
+                height="350"
+              />
+            </div>
+          </div>
         </Reveal>
         <Reveal delay={120}>
-          <div className="space-y-5 text-[16px] leading-relaxed text-[var(--text-muted)]">
+          <div className="space-y-5 mt-32 text-[16px] leading-relaxed text-[var(--text-muted)]">
             <p>
               Je concois et développe des applications web pour des secteurs publics et privés au Bénin
               depuis plus de trois ans, du recueil des besoins jusqu'au déploiement. J'aime
