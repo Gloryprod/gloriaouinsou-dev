@@ -398,7 +398,7 @@ export default function Portfolio() {
   return (
     <div
       style={theme}
-      className="min-h-screen bg-[var(--bg)] text-[var(--text)] font-body antialiased selection:bg-[var(--accent)] selection:text-[var(--accent-contrast)]"
+      className="min-h-screen w-full overflow-x-hidden bg-[var(--bg)] text-[var(--text)] font-body antialiased selection:bg-[var(--accent)] selection:text-[var(--accent-contrast)]"
     >
       {/* Polices + styles globaux */}
       <style>{`
@@ -511,8 +511,8 @@ export default function Portfolio() {
       {/* ---------------------------------------------------------------- */}
       {/* HERO                                                             */}
       {/* ---------------------------------------------------------------- */}
-      <section id="hero" className="max-w-6xl mx-auto px-6 pt-16 sm:pt-24 pb-8 grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
-        <Reveal>
+      <section id="hero" className="max-w-6xl mx-auto px-6 pt-16 sm:pt-24 pb-8 grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center min-w-0">
+        <Reveal className="min-w-0">
           <p className="font-mono text-[13px] text-[var(--accent)] mb-5 flex items-center gap-2">
             <MapPin size={14} /> {PROFILE.location} — disponible pour de nouvelles missions
           </p>
@@ -555,15 +555,15 @@ export default function Portfolio() {
         </Reveal>
 
         {/* Bloc "code" — signature du hero */}
-        <Reveal delay={150}>
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl overflow-hidden">
+        <Reveal delay={150} className="min-w-0 w-full">
+          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl overflow-hidden w-full">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-[var(--border)] bg-[var(--surface-2)]">
               <span className="w-3 h-3 rounded-full bg-[#FF5F56]" />
               <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
               <span className="w-3 h-3 rounded-full bg-[#27C93F]" />
               <span className="ml-3 font-mono text-[11px] text-[var(--text-muted)]">profil.js</span>
             </div>
-            <pre className="font-mono text-[13px] leading-[1.9] p-6 overflow-x-auto text-[var(--text-muted)]">
+            <pre className="font-mono text-[13px] leading-[1.9] p-6 overflow-x-auto max-w-full text-[var(--text-muted)]">
               <code>
                 <span className="text-[var(--accent-2)]">const</span> gloria = {"{"}
                 {"\n"}  role: <span className="text-[var(--accent)]">"Développeuse Full Stack"</span>,
@@ -583,7 +583,7 @@ export default function Portfolio() {
       {/* ---------------------------------------------------------------- */}
       {/* À PROPOS                                                         */}
       {/* ---------------------------------------------------------------- */}
-      <section id="about" className="max-w-6xl mx-auto px-6 py-8 sm:py-16 grid md:grid-cols-[0.4fr_0.6fr] gap-10">
+      <section id="about" className="max-w-6xl mx-auto px-6 py-8 sm:py-16 grid md:grid-cols-[0.4fr_0.6fr] gap-10 min-w-0">
         <Reveal>
           <p className="font-mono text-[13px] text-[var(--accent)] mb-3">À propos</p>
           <h2 className="font-display font-semibold text-2xl sm:text-3xl text-[var(--text)] leading-tight">
@@ -675,7 +675,7 @@ export default function Portfolio() {
       {/* ---------------------------------------------------------------- */}
       {/* CONTACT                                                          */}
       {/* ---------------------------------------------------------------- */}
-      <section id="contact" className="max-w-6xl mx-auto px-6 py-8 sm:py-20 grid lg:grid-cols-[0.45fr_0.55fr] gap-12">
+      <section id="contact" className="max-w-6xl mx-auto px-6 py-8 sm:py-20 grid lg:grid-cols-[0.45fr_0.55fr] gap-12 min-w-0">
         <Reveal>
           <p className="font-mono text-[13px] text-[var(--accent)] mb-3">Contact</p>
           <h2 className="font-display font-semibold text-2xl sm:text-3xl text-[var(--text)] mb-4 leading-tight">
@@ -689,7 +689,7 @@ export default function Portfolio() {
             <a
               href={`mailto:${PROFILE.email}`}
               className="inline-flex items-center gap-3 text-sm text-[var(--text)] hover:text-[var(--accent)] transition-colors
-                         focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] rounded-md w-fit"
+                         focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] rounded-md w-fit break-all"
             >
               <span className="w-9 h-9 flex items-center justify-center rounded-full border border-[var(--border)]">
                 <Mail size={16} />
@@ -826,7 +826,7 @@ export default function Portfolio() {
       <footer className="border-t border-[var(--border)]">
         <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-mono text-[12px] text-[var(--text-muted)]">
-            © {new Date().getFullYear()} {PROFILE.name} — Tous droits réservés.
+            © {new Date().getFullYear()} {PROFILE.name} — Conçu &amp; développé avec React + Tailwind CSS.
           </p>
           <div className="flex items-center gap-4">
             <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
