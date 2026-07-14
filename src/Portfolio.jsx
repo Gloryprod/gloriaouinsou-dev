@@ -14,6 +14,8 @@ import {
   User,
   Briefcase,
   GraduationCap,
+  Loader2,
+  AlertCircle,
 } from "lucide-react";
 
 // ----------------------------------------------------------------------------
@@ -327,7 +329,9 @@ export default function Portfolio() {
   const [isDark, setIsDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  // status : "idle" | "loading" | "success" | "error"
+  const [formStatus, setFormStatus] = useState("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const theme = isDark
     ? {
@@ -363,13 +367,32 @@ export default function Portfolio() {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // NOTE: branche ici ton vrai endpoint (ex: Formspree, API route Next.js,
-    // Laravel Mailable, etc.). Pour l'instant, on simule un envoi réussi.
     if (!formState.name || !formState.email || !formState.message) return;
-    setSubmitted(true);
-    setFormState({ name: "", email: "", message: "" });
+
+    setFormStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Une erreur est survenue.");
+      }
+
+      setFormStatus("success");
+      setFormState({ name: "", email: "", message: "" });
+    } catch (err) {
+      setFormStatus("error");
+      setErrorMessage(err.message || "Impossible d'envoyer le message. Réessaie plus tard.");
+    }
   };
 
   return (
@@ -701,7 +724,7 @@ export default function Portfolio() {
         </Reveal>
 
         <Reveal delay={120}>
-          {submitted ? (
+          {formStatus === "success" ? (
             <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 flex flex-col items-start gap-3">
               <CheckCircle2 className="text-[var(--accent)]" size={28} />
               <h3 className="font-display font-semibold text-lg text-[var(--text)]">
@@ -711,7 +734,7 @@ export default function Portfolio() {
                 Merci ! Je reviens vers vous très vite à l'adresse indiquée.
               </p>
               <button
-                onClick={() => setSubmitted(false)}
+                onClick={() => setFormStatus("idle")}
                 className="font-mono text-[13px] text-[var(--accent)] mt-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] rounded-md"
               >
                 Envoyer un autre message
@@ -727,10 +750,11 @@ export default function Portfolio() {
                   id="name"
                   type="text"
                   required
+                  disabled={formStatus === "loading"}
                   value={formState.name}
                   onChange={(e) => setFormState((s) => ({ ...s, name: e.target.value }))}
                   className="w-full rounded-xl bg-[var(--surface-2)] border border-[var(--border)] px-4 py-3 text-sm text-[var(--text)]
-                             placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                             placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors disabled:opacity-60"
                   placeholder="Votre nom"
                 />
               </div>
@@ -742,10 +766,11 @@ export default function Portfolio() {
                   id="email"
                   type="email"
                   required
+                  disabled={formStatus === "loading"}
                   value={formState.email}
                   onChange={(e) => setFormState((s) => ({ ...s, email: e.target.value }))}
                   className="w-full rounded-xl bg-[var(--surface-2)] border border-[var(--border)] px-4 py-3 text-sm text-[var(--text)]
-                             placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                             placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors disabled:opacity-60"
                   placeholder="vous@exemple.com"
                 />
               </div>
@@ -757,20 +782,38 @@ export default function Portfolio() {
                   id="message"
                   required
                   rows={5}
+                  disabled={formStatus === "loading"}
                   value={formState.message}
                   onChange={(e) => setFormState((s) => ({ ...s, message: e.target.value }))}
                   className="w-full rounded-xl bg-[var(--surface-2)] border border-[var(--border)] px-4 py-3 text-sm text-[var(--text)]
-                             placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors resize-none"
+                             placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors resize-none disabled:opacity-60"
                   placeholder="Parlez-moi de votre projet..."
                 />
               </div>
+
+              {formStatus === "error" && (
+                <div className="flex items-start gap-2 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+                  <AlertCircle size={16} className="mt-0.5 shrink-0" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               <button
                 type="submit"
+                disabled={formStatus === "loading"}
                 className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[var(--accent)] text-[var(--accent-contrast)] font-medium text-sm
-                           hover:bg-[var(--accent-strong)] transition-colors
+                           hover:bg-[var(--accent-strong)] transition-colors disabled:opacity-70 disabled:cursor-not-allowed
                            focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--text)]"
               >
-                Envoyer le message <Send size={15} />
+                {formStatus === "loading" ? (
+                  <>
+                    <Loader2 size={15} className="animate-spin" /> Envoi en cours...
+                  </>
+                ) : (
+                  <>
+                    Envoyer le message <Send size={15} />
+                  </>
+                )}
               </button>
             </form>
           )}
@@ -783,7 +826,7 @@ export default function Portfolio() {
       <footer className="border-t border-[var(--border)]">
         <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-mono text-[12px] text-[var(--text-muted)]">
-            © {new Date().getFullYear()} {PROFILE.name} — Conçu &amp; développé avec React + Tailwind CSS.
+            © {new Date().getFullYear()} {PROFILE.name} — Tous droits réservés.
           </p>
           <div className="flex items-center gap-4">
             <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
