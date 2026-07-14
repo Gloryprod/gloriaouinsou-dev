@@ -517,8 +517,8 @@ export default function Portfolio() {
             <MapPin size={14} /> {PROFILE.location} — disponible pour de nouvelles missions
           </p>
           <h1 className="font-display font-semibold text-[36px] sm:text-[52px] leading-[1.08] tracking-tight text-[var(--text)] mb-6">
-            Je construis des produits web qui{" "}
-            <span className="text-[var(--accent)]">créent un vrai impact</span>, pas juste des interfaces.
+           Développeuse{" "}
+            <span className="text-[var(--accent)]">web Full Stack</span>.
           </h1>
           <p className="text-[17px] sm:text-[18px] leading-relaxed text-[var(--text-muted)] max-w-xl mb-9">
             {PROFILE.tagline} Spécialisée en React, Next.js, Node.js et Laravel, je livre des
@@ -549,7 +549,7 @@ export default function Portfolio() {
                          hover:text-[var(--text)] transition-colors
                          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] rounded-full"
             >
-              <Download size={16} /> Télécharger mon CV
+              <Download size={16} /> Voir mon CV
             </a>
           </div>
         </Reveal>
@@ -593,7 +593,7 @@ export default function Portfolio() {
         <Reveal delay={120}>
           <div className="space-y-5 text-[16px] leading-relaxed text-[var(--text-muted)]">
             <p>
-              Je développe des applications web pour des secteurs publics et privés au Bénin
+              Je concois et développe des applications web pour des secteurs publics et privés au Bénin
               depuis plus de trois ans, du recueil des besoins jusqu'au déploiement. J'aime
               travailler avec une discipline claire : objectifs définis, priorités assumées,
               résultats mesurables — une approche par OKR qui garde chaque projet aligné sur
@@ -826,7 +826,7 @@ export default function Portfolio() {
       <footer className="border-t border-[var(--border)]">
         <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-mono text-[12px] text-[var(--text-muted)]">
-            © {new Date().getFullYear()} {PROFILE.name} — Conçu &amp; développé avec React + Tailwind CSS.
+            © {new Date().getFullYear()} {PROFILE.name} — Touts droits réservés.
           </p>
           <div className="flex items-center gap-4">
             <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
