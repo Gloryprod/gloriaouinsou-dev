@@ -92,9 +92,9 @@ const PROFILE = {
     "Je conçois des produits web fiables et utiles, pensés pour un impact social réel — du besoin métier jusqu'au déploiement.",
   location: "Cotonou, Bénin",
   email: "gracia.ouinsou@gmail.com",
-  github: "#", 
+  github: "https://github.com/Gloryprod", 
   linkedin: "www.linkedin.com/in/gloria-ouinsou-982b2525b", 
-  cvUrl: "https://docs.google.com/document/d/1LS5eMvTomVeFSQ6YeD4w31B7Qo3Wh5mu/edit?usp=sharing&ouid=100604547358997680571&rtpof=true&sd=true",
+  cvUrl: "https://drive.google.com/file/d/1atiQZzABaSl9KYge01vzIzWjcVFkleGQ/view",
 };
 
 // Photo utilisée dans la section "À propos".
