@@ -128,25 +128,25 @@ const PROJECTS = [
     title: "Jobsy",
     type: "personal",
     problem:
-      "Application innovante qui a pour ambition de faciliter l'accès à l'emploi des jeunes talents qui ne possèdent pas de diplômes formels. En déplaçant le curseur du CV traditionnel vers les compétences réelles, la plateforme propose un système d'évaluation dynamique basé sur des tests de logique et des mises en situation pratiques pour révéler le potentiel de chaque candidat.",
+      "Plateforme béninoise de micro-missions et de développement de compétences visant à faciliter l’insertion professionnelle en connectant jeunes et entreprises.",
     tags: ["Next.js", "Laravel", "MySQL", "API REST"],
-    link: "#",
+    link: "https://github.com/Gloryprod/jobsy_project",
   },
   {
     title: "Ahitché",
     type: "client",
     problem:
-      "Plateforme web hybride conçue pour libérer les ménages béninois des contraintes de l'approvisionnement quotidien — marqué par l'inflation, l'instabilité des prix et la corvée des marchés bondés — en leur permettant de s'abonner à des formules de paniers de vivres essentiels de qualité, livrées à domicile à un tarif stable et garanti.",
+      "Service de suivi alimentaire des foyers béninois, conçu pour assurer un ravitaillement régulier et adapté tout en simplifiant la gestion des achats du quotidien.",
     tags: ["Vue.js", "Express.js", "MVP"],
-    link: "#",
+    link: "https://ahitchebj.com",
   },
   {
-    title: "Plateforme Multi-Tenant",
+    title: "Horyzion",
     type: "client",
     problem:
-      "Plateforme web multi-tenant moderne, permettant de gérer et de déployer instantanément le site indépendant de chaque filiale du groupe à partir d'un code et d'un CMS uniques.",
+      "Plateforme digitale multi-tenant centralisant la présence web et la communication d’un groupe multi-secteurs, avec des vitrines dédiées à ses différentes entités.",
     tags: ["Next.js", "Sanity.io", "Multi-tenant"],
-    link: "#",
+    link: "https://horyzion.com",
   },
 ];
 
@@ -724,18 +724,6 @@ export default function Portfolio() {
                 <Mail size={16} />
               </span>
               {PROFILE.email}
-            </a>
-            <a
-              href={PROFILE.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 text-sm text-[var(--text)] hover:text-[var(--accent)] transition-colors
-                         focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] rounded-md w-fit"
-            >
-              <span className="w-9 h-9 flex items-center justify-center rounded-full border border-[var(--border)]">
-                <GithubIcon size={16} />
-              </span>
-              GitHub
             </a>
             <a
               href={PROFILE.linkedin}
