@@ -81,8 +81,7 @@ function LinkedinIcon({ size = 16, className = "" }) {
  */
 
 // ----------------------------------------------------------------------------
-// Données du contenu (à adapter facilement : remplace les liens GitHub /
-// LinkedIn par les tiens, ajoute des captures d'écran, etc.)
+// Données du contenu 
 // ----------------------------------------------------------------------------
 
 const PROFILE = {
@@ -93,17 +92,11 @@ const PROFILE = {
   location: "Cotonou, Bénin",
   email: "gracia.ouinsou@gmail.com",
   github: "https://github.com/Gloryprod", 
-  linkedin: "www.linkedin.com/in/gloria-ouinsou-982b2525b", 
+  linkedin: "https://www.linkedin.com/in/gloria-ouinsou-982b2525b/", 
   cvUrl: "https://drive.google.com/file/d/1atiQZzABaSl9KYge01vzIzWjcVFkleGQ/view",
 };
 
-// Photo utilisée dans la section "À propos".
-// Place ton fichier photo dans le dossier `public/` de ton projet Vite
-// (ex: public/photo-gloria.jpg), puis référence-le ici avec un chemin
-// commençant par "/" — Vite sert automatiquement tout ce qui est dans
-// `public/` à la racine du site, pas besoin d'import.
-// Format recommandé : portrait, ratio 4/5 (ex: 800x1000px), .jpg ou .webp,
-// compressé (< 300 Ko) pour ne pas ralentir le chargement.
+
 const ABOUT_PHOTO_URL = "/photo-gloria.jpg";
 
 const NAV_LINKS = [
