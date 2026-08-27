@@ -93,7 +93,7 @@ const PROFILE = {
   email: "gracia.ouinsou@gmail.com",
   github: "https://github.com/Gloryprod", 
   linkedin: "https://www.linkedin.com/in/gloria-ouinsou-982b2525b/", 
-  cvUrl: "https://drive.google.com/file/d/1atiQZzABaSl9KYge01vzIzWjcVFkleGQ/view",
+  cvUrl: "https://drive.google.com/file/d/1cK5Pe21cI98Be1gv-WgDEU8-stfR_wTi/view?usp=sharing",
 };
 
 
