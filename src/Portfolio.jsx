@@ -523,7 +523,7 @@ export default function Portfolio() {
             <span className="text-[var(--accent)]">Web Full Stack</span>.
           </h1>
           <p className="text-[17px] sm:text-[18px] leading-relaxed text-[var(--text-muted)] max-w-xl mb-9">
-            {PROFILE.tagline} Spécialisée en React, Next.js, Node.js et Laravel, je livre des
+            {PROFILE.tagline} Spécialisée en React, Next.js, Node.js, Vue.js et Laravel, je livre des
             solutions numériques durables.
           </p>
           <div className="flex flex-wrap items-center gap-4">
@@ -569,7 +569,7 @@ export default function Portfolio() {
               <code>
                 <span className="text-[var(--accent-2)]">const</span> gloria = {"{"}
                 {"\n"}  role: <span className="text-[var(--accent)]">"Développeuse Full Stack"</span>,
-                {"\n"}  stack: [<span className="text-[var(--accent)]">"React"</span>, <span className="text-[var(--accent)]">"Next.js"</span>, <span className="text-[var(--accent)]">"Node.js"</span>, <span className="text-[var(--accent)]">"Laravel"</span>],
+                {"\n"}  stack: [<span className="text-[var(--accent)]">"React"</span>, <span className="text-[var(--accent)]">"Next.js"</span>, <span className="text-[var(--accent)]">"Node.js"</span>, <span className="text-[var(--accent)]">"Vue.js"</span>, <span className="text-[var(--accent)]">"Laravel"</span>],
                 {"\n"}  focus: [<span className="text-[var(--accent)]">"impact social"</span>, <span className="text-[var(--accent)]">"solutions durables"</span>],
                 {"\n"}  methode: <span className="text-[var(--accent)]">"OKR"</span>,
                 {"\n"}  basedIn: <span className="text-[var(--accent)]">"Cotonou, Bénin"</span>,
@@ -622,7 +622,7 @@ export default function Portfolio() {
               ce qui compte vraiment.
             </p>
             <p>
-              Ma sensibilité technique — API RESTful, architecture backend, interfaces React
+              Ma sensibilité technique — API RESTful, architecture backend, interfaces React ou Vue.js
               soignées — est mise au service d'un principe simple : un bon produit numérique
               doit résoudre un vrai problème, rester maintenable, et rester accessible à ceux
               qui l'utilisent au quotidien, quelles que soient leurs contraintes.
