@@ -93,7 +93,7 @@ const PROFILE = {
   email: "gracia.ouinsou@gmail.com",
   github: "https://github.com/Gloryprod", 
   linkedin: "https://www.linkedin.com/in/gloria-ouinsou-982b2525b/", 
-  cvUrl: "https://drive.google.com/file/d/1cK5Pe21cI98Be1gv-WgDEU8-stfR_wTi/view?usp=sharing",
+  cvUrl: "https://drive.google.com/file/d/1C8GsuT0-15p0VUXqsSpk-1XQhhimRJQH/view?usp=sharing",
 };
 
 
@@ -122,7 +122,7 @@ const PROJECTS = [
     type: "personal",
     problem:
       "Plateforme béninoise de micro-missions et de développement de compétences visant à faciliter l’insertion professionnelle en connectant jeunes et entreprises.",
-    tags: ["Next.js", "Laravel", "MySQL", "API REST"],
+    tags: ["Next.js", "Laravel", "MySQL", "API REST", "Kkiapay", "Pusher", "TypeScript", "Tailwind CSS", "LLM"],
     link: "https://github.com/Gloryprod/jobsy_project",
   },
   {
@@ -130,7 +130,7 @@ const PROJECTS = [
     type: "client",
     problem:
       "Service de suivi alimentaire des foyers béninois, conçu pour assurer un ravitaillement régulier et adapté tout en simplifiant la gestion des achats du quotidien.",
-    tags: ["Vue.js", "Express.js", "MVP"],
+    tags: ["Vue.js", "Express.js", "MongoDB", "TypeScript", "Resend", "Cloudinary", "Tailwind CSS", "API REST"],
     link: "https://ahitchebj.com",
   },
   {
@@ -138,8 +138,16 @@ const PROJECTS = [
     type: "client",
     problem:
       "Plateforme digitale multi-tenant centralisant la présence web et la communication d’un groupe multi-secteurs, avec des vitrines dédiées à ses différentes entités.",
-    tags: ["Next.js", "Sanity.io", "Multi-tenant"],
+    tags: ["Next.js", "Sanity.io", "Multi-tenant", "Resend", "Deepl", "Tailwind CSS", "TypeScript", "Recaptcha"],
     link: "https://horyzion.com",
+  },
+  {
+    title: "Aiesec Connect",
+    type: "client",
+    problem:
+      "Plateforme communautaire destinée aux membres d'AIESEC ou chacun développe son réseau et valorise son parcours AIESEC.",
+    tags: ["Next.js", "MVP"],
+    link: "https://aiesec-connect.vercel.app",
   },
 ];
 
@@ -615,9 +623,8 @@ export default function Portfolio() {
         <Reveal delay={120}>
           <div className="space-y-5 mt-32 text-[16px] leading-relaxed text-[var(--text-muted)]">
             <p>
-              Je concois et développe des applications web pour des secteurs publics et privés au Bénin
-              depuis plus de trois ans, du recueil des besoins jusqu'au déploiement. J'aime
-              travailler avec une discipline claire : objectifs définis, priorités assumées,
+              Spécialisée dans le développement web au Bénin depuis plus de trois ans, je gère l'intégralité du cycle projet : analyse des besoins, conception, réalisation et déploiement. 
+              J'aime travailler avec une discipline claire : objectifs définis, priorités assumées,
               résultats mesurables — une approche par OKR qui garde chaque projet aligné sur
               ce qui compte vraiment.
             </p>
